@@ -1,4 +1,4 @@
-package rosalila.studio.hackatonpinocho;
+package rosalila.studio.patadadecisiva2013;
 
 import org.andengine.extension.physics.box2d.PhysicsFactory;
 

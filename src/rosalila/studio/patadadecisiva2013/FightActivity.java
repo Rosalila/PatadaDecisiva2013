@@ -1,4 +1,4 @@
-package rosalila.studio.hackatonpinocho;
+package rosalila.studio.patadadecisiva2013;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,6 +41,7 @@ import android.hardware.SensorManager;
 import android.util.Log;
 import android.view.KeyEvent;
 
+import com.appbucks.sdk.AppBucksAPI;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
@@ -236,6 +237,9 @@ public class FightActivity extends SimpleBaseGameActivity implements IOnAreaTouc
 
 	@Override
 	public Scene onCreateScene() {
+		AppBucksAPI.initialize(this, "<Application Name>", R.drawable.ic_launcher,-1, "<API Key>", false, null, null);
+		AppBucksAPI.showInterstitial(this);
+		
 		this.mEngine.registerUpdateHandler(new FPSLogger());
 
 		mScene = new Scene();

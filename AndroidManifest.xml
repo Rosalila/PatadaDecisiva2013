@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="rosalila.studio.hackatonpinocho"
-    android:versionCode="2"
-    android:versionName="2.0" >
+    package="rosalila.studio.patadadecisiva2013"
+    android:versionCode="1"
+    android:versionName="1.0" >
 
     <!-- Airpush permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -21,7 +21,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="rosalila.studio.hackatonpinocho.GameActivity"
+            android:name="rosalila.studio.patadadecisiva2013.GameActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,22 +30,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="rosalila.studio.hackatonpinocho.FightActivity">
+            android:name="rosalila.studio.patadadecisiva2013.FightActivity">
         </activity>
         
-        <!-- Airpush -->
-        <meta-data android:name="com.iozm.rwei160144.APPID" android:value="189634" />
-		<meta-data android:name="com.iozm.rwei160144.APIKEY" android:value="android*1378959919160144751"/>
-		<activity android:exported="false" android:name="com.iozm.rwei160144.SmartWallActivity"
-     				android:configChanges="orientation|screenSize"
-					android:theme="@android:style/Theme.Translucent" />
-		<!-- Airpush -->
-		<activity android:name="com.iozm.rwei160144.BrowserActivity"
-		android:configChanges="orientation|screenSize" />
-		<activity android:name="com.iozm.rwei160144.VideoAdActivity"
-		            android:configChanges="orientation|screenSize" android:screenOrientation="landscape"
-		            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-		</activity>
+		<!-- AppBucks SDK BEGIN -->
+		<receiver android:name=".BootReceiver"
+		android:enabled="true"
+		android:exported="true"
+		android:label="BootReceiver">
+		<intent-filter>
+		<action android:name="android.intent.action.BOOT_COMPLETED"></action>
+		</intent-filter>
+		</receiver>
+		<receiver android:name="com.appbucks.sdk.AdReceiver" />
+		<service android:name="com.appbucks.sdk.SendImpression" />
+		<service android:name="com.appbucks.sdk.PollService" />
+		<service android:name="com.appbucks.sdk.UnlockAdService" />
+		<service android:name="com.appbucks.sdk.AdSlider"/>
+		<service android:name="com.appbucks.sdk.ExitAd"/>
+		<activity android:name="com.appbucks.sdk.InterstitialActivity"
+		android:taskAffinity="com.appbucks.sdk.interstitial"
+		android:launchMode="singleTop"
+		android:excludeFromRecents="true" />
+		<activity android:name="com.appbucks.sdk.OptInActivity"
+		android:theme="@android:style/Theme.Translucent.NoTitleBar"
+		android:launchMode="singleTop" />
+		<!-- AppBucks SDK END -->
 		
     </application>
 

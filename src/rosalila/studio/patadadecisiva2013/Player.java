@@ -1,4 +1,4 @@
-package rosalila.studio.hackatonpinocho;
+package rosalila.studio.patadadecisiva2013;
 
 import org.andengine.entity.primitive.Rectangle;
 import org.andengine.entity.sprite.AnimatedSprite;
