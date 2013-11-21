@@ -1,0 +1,52 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="rosalila.studio.hackatonpinocho"
+    android:versionCode="2"
+    android:versionName="2.0" >
+
+    <!-- Airpush permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="rosalila.studio.hackatonpinocho.GameActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="rosalila.studio.hackatonpinocho.FightActivity">
+        </activity>
+        
+        <!-- Airpush -->
+        <meta-data android:name="com.iozm.rwei160144.APPID" android:value="189634" />
+		<meta-data android:name="com.iozm.rwei160144.APIKEY" android:value="android*1378959919160144751"/>
+		<activity android:exported="false" android:name="com.iozm.rwei160144.SmartWallActivity"
+     				android:configChanges="orientation|screenSize"
+					android:theme="@android:style/Theme.Translucent" />
+		<!-- Airpush -->
+		<activity android:name="com.iozm.rwei160144.BrowserActivity"
+		android:configChanges="orientation|screenSize" />
+		<activity android:name="com.iozm.rwei160144.VideoAdActivity"
+		            android:configChanges="orientation|screenSize" android:screenOrientation="landscape"
+		            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+		</activity>
+		
+    </application>
+
+</manifest>
