@@ -41,7 +41,6 @@ import android.hardware.SensorManager;
 import android.util.Log;
 import android.view.KeyEvent;
 
-import com.appbucks.sdk.AppBucksAPI;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
@@ -237,9 +236,6 @@ public class FightActivity extends SimpleBaseGameActivity implements IOnAreaTouc
 
 	@Override
 	public Scene onCreateScene() {
-		AppBucksAPI.initialize(this, "Patada Decisiva 2013", R.drawable.ic_launcher,1352136144, "5193d950-0ad4-40e9-b63e-474767b281a7", false
-				, null, null);
-		AppBucksAPI.showInterstitial(this);
 		
 		this.mEngine.registerUpdateHandler(new FPSLogger());
 
