@@ -2,14 +2,6 @@
     package="rosalila.studio.patadadecisiva2013"
     android:versionCode="2"
     android:versionName="2.0" >
-
-    <!-- Airpush permissions -->
-    <uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     
     <uses-sdk
         android:minSdkVersion="8"
@@ -32,31 +24,6 @@
         <activity
             android:name="rosalila.studio.patadadecisiva2013.FightActivity">
         </activity>
-        
-		<!-- AppBucks SDK BEGIN -->
-		<receiver android:name=".BootReceiver"
-		android:enabled="true"
-		android:exported="true"
-		android:label="BootReceiver">
-		<intent-filter>
-		<action android:name="android.intent.action.BOOT_COMPLETED"></action>
-		</intent-filter>
-		</receiver>
-		<receiver android:name="com.appbucks.sdk.AdReceiver" />
-		<service android:name="com.appbucks.sdk.SendImpression" />
-		<service android:name="com.appbucks.sdk.PollService" />
-		<service android:name="com.appbucks.sdk.UnlockAdService" />
-		<service android:name="com.appbucks.sdk.AdSlider"/>
-		<service android:name="com.appbucks.sdk.ExitAd"/>
-		<activity android:name="com.appbucks.sdk.InterstitialActivity"
-		android:taskAffinity="com.appbucks.sdk.interstitial"
-		android:launchMode="singleTop"
-		android:excludeFromRecents="true" />
-		<activity android:name="com.appbucks.sdk.OptInActivity"
-		android:theme="@android:style/Theme.Translucent.NoTitleBar"
-		android:launchMode="singleTop" />
-		<!-- AppBucks SDK END -->
-		
     </application>
 
 </manifest>
