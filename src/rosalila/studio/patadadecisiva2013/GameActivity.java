@@ -20,11 +20,11 @@ import org.andengine.opengl.texture.region.ITextureRegion;
 import org.andengine.ui.activity.BaseGameActivity;
 
 import tv.ouya.console.api.OuyaController;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.KeyEvent;
+
+import com.startapp.android.publish.StartAppAd;
 
 public class GameActivity extends BaseGameActivity {
 
@@ -37,6 +37,8 @@ public class GameActivity extends BaseGameActivity {
 	
 	private Scene mSplashScene;
 	private Scene mMainMenuScene;
+	
+	private StartAppAd startAppAd = new StartAppAd(this);
 	
 	@Override
 	public EngineOptions onCreateEngineOptions() {
@@ -116,6 +118,13 @@ public class GameActivity extends BaseGameActivity {
 		mainMenuAtlas.load();		
 	}
 	
+
+	@Override
+	protected void onSetContentView() {
+		super.onSetContentView();
+		StartAppAd.init(this, "111281878", "211380146");
+	}
+	
 	/* 
 	 * Creates and populates the Scene used as main menu
 	 * */
@@ -132,7 +141,17 @@ public class GameActivity extends BaseGameActivity {
 			public boolean onSceneTouchEvent(Scene pScene, TouchEvent pSceneTouchEvent)
 			{
 				if(pSceneTouchEvent.isActionDown())
-				{
+				{			
+					
+					
+					GameActivity.this.runOnUiThread(new Runnable() {
+                        public void run() {
+                        	startAppAd.showAd(); // show the ad
+        					startAppAd.loadAd(); // load the next ad
+                        }
+                    });
+					
+					
 					Intent intent = new Intent(GameActivity.this, FightActivity.class);
 					startActivity(intent);
 //						finish();
@@ -141,6 +160,13 @@ public class GameActivity extends BaseGameActivity {
 			}
 		});
 	}
+	
+	@Override
+	public void onResume(){
+		super.onResume();
+		startAppAd.onResume();
+	}
+	
 	
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)

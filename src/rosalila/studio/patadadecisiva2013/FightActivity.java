@@ -122,6 +122,7 @@ public class FightActivity extends SimpleBaseGameActivity implements IOnAreaTouc
 	private Sound mWinSound;
 	
 	
+	
 
 	// ===========================================================
 	// Constructors
@@ -144,7 +145,8 @@ public class FightActivity extends SimpleBaseGameActivity implements IOnAreaTouc
 	}
 
 	@Override
-	public EngineOptions onCreateEngineOptions() {
+	public EngineOptions onCreateEngineOptions() {		
+		
 		final Camera camera = new Camera(0, 0, GameConstants.CAMERA_WIDTH, GameConstants.CAMERA_HEIGHT);
 		
 		EngineOptions engineOptions = new EngineOptions(true, ScreenOrientation.LANDSCAPE_FIXED, new RatioResolutionPolicy(GameConstants.CAMERA_WIDTH, GameConstants.CAMERA_HEIGHT), camera);
@@ -306,12 +308,12 @@ public class FightActivity extends SimpleBaseGameActivity implements IOnAreaTouc
 		return mScene;
 	}
 	
+
 	/*
 	 * Function called when a player wins a round
 	 * */
 	private void playerWinsRound(int player_number)
 	{
-		
 		mWinSound.play();
 		if(player_number == 1)
 		{
