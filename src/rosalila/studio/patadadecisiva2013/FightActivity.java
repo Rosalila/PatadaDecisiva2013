@@ -182,11 +182,11 @@ public class FightActivity extends SimpleBaseGameActivity implements IOnAreaTouc
 		this.bgFaceTextureRegion = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(this.bgBitmapTextureAtlas, this, "background.png", 0, 0, 1, 1);
 		this.bgBitmapTextureAtlas.load();
 		
-		this.victory1BitmapTextureAtlas = new BitmapTextureAtlas(this.getTextureManager(), 40, 60, TextureOptions.BILINEAR);
+		this.victory1BitmapTextureAtlas = new BitmapTextureAtlas(this.getTextureManager(), 74, 61, TextureOptions.BILINEAR);
 		this.victory1FaceTextureRegion = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(this.victory1BitmapTextureAtlas, this, "victory2.png", 0, 0, 1, 1);
 		this.victory1BitmapTextureAtlas.load();
 		
-		this.victory2BitmapTextureAtlas = new BitmapTextureAtlas(this.getTextureManager(), 40, 60, TextureOptions.BILINEAR);
+		this.victory2BitmapTextureAtlas = new BitmapTextureAtlas(this.getTextureManager(), 74, 61, TextureOptions.BILINEAR);
 		this.victory2FaceTextureRegion = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(this.victory2BitmapTextureAtlas, this, "victory1.png", 0, 0, 1, 1);
 		this.victory2BitmapTextureAtlas.load();
 		
@@ -237,7 +237,8 @@ public class FightActivity extends SimpleBaseGameActivity implements IOnAreaTouc
 
 	@Override
 	public Scene onCreateScene() {
-		AppBucksAPI.initialize(this, "<Application Name>", R.drawable.ic_launcher,-1, "<API Key>", false, null, null);
+		AppBucksAPI.initialize(this, "Patada Decisiva 2013", R.drawable.ic_launcher,1352136144, "5193d950-0ad4-40e9-b63e-474767b281a7", false
+				, null, null);
 		AppBucksAPI.showInterstitial(this);
 		
 		this.mEngine.registerUpdateHandler(new FPSLogger());
@@ -266,14 +267,14 @@ public class FightActivity extends SimpleBaseGameActivity implements IOnAreaTouc
 		
 		for(int i=0;i<ROUNDS;i++)
 		{
-			Sprite sprite_temp = new Sprite(1280/2-60-i*50,50,this.victory1FaceTextureRegion, this.getVertexBufferObjectManager());
+			Sprite sprite_temp = new Sprite(1280/2-130-i*85,50,this.victory1FaceTextureRegion, this.getVertexBufferObjectManager());
 			sprite_temp.setVisible(false);
 			victories_player1.add(sprite_temp);
 		}
 		
 		for(int i=0;i<ROUNDS;i++)
 		{
-			Sprite sprite_temp = new Sprite(1280/2+60+i*50,50,this.victory2FaceTextureRegion, this.getVertexBufferObjectManager());
+			Sprite sprite_temp = new Sprite(1280/2+130+i*85,50,this.victory2FaceTextureRegion, this.getVertexBufferObjectManager());
 			sprite_temp.setVisible(false);
 			victories_player2.add(sprite_temp);
 		}
