@@ -6,10 +6,6 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -28,14 +24,6 @@
         <activity
             android:name="rosalila.studio.patadadecisiva2013.FightActivity">
         </activity>
-        
-		<activity android:name="com.startapp.android.publish.list3d.List3DActivity"
-		android:taskAffinity="rosalila.studio.patadadecisiva2013.AppWall"
-		android:theme="@android:style/Theme" />
-		<activity android:name="com.startapp.android.publish.AppWallActivity"
-		android:theme="@android:style/Theme.Translucent"
-		android:taskAffinity="rosalila.studio.patadadecisiva2013.AppWall"
-		android:configChanges="orientation|keyboardHidden" />
         
     </application>
 
